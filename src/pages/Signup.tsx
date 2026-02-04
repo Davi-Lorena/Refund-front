@@ -25,7 +25,7 @@ console.log(name, email, password, passwordConfirm)
 
 <Button type="submit" isLoading={isLoading}>Cadastrar</Button>
 
-<a href="/signin" className="text-sm font-semibold text-gray-100 mt-10 mb-4 text-center hover:text-green-800 transition ease-linear">Já tenho uma conta</a>
+<a href="/" className="text-sm font-semibold text-gray-100 mt-10 mb-4 text-center hover:text-green-800 transition ease-linear">Já tenho uma conta</a>
     </form>
   )
 }

@@ -1,11 +1,15 @@
 import { Routes, Route } from "react-router"
 
+import { AuthLayout } from "../components/AuthLayout"
+
 import { SignIn } from "../pages/Signin"
 
 export function AuthRoutes() {
     return (
-        <Routes>
-<Route path="/" index element={<SignIn />} />
-        </Routes>
+<Routes>
+    <Route path="/" element={<AuthLayout />}>
+        <Route path="/" index element={<SignIn />} />
+    </Route>
+</Routes>
     )
 }

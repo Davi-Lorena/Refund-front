@@ -16,6 +16,7 @@ const [category, setCategory] = useState("")
 </header>
 
 <Input required legend="Nome da solicitação"/>
+<div className="flex gap-4">
 <Select required legend="Categoria" value={category} onChange={(e) => setCategory(e.target.value)}> 
     {
         CATEGORIES_KEYS.map((category) => (
@@ -25,6 +26,8 @@ const [category, setCategory] = useState("")
         ))
     }
 </Select>
+<Input type="number" legend="Valor" required placeholder="0,00"/>
+</div>
         </form>
     )
 }

@@ -1,8 +1,7 @@
 import { useState } from "react";
-
 import { Input } from "../components/Input";
-
 import { Select } from "../components/Select";
+import { Upload } from "../components/Upload";
 import { CATEGORIES, CATEGORIES_KEYS } from "../utils/categories";
 
 export function Refund() {
@@ -28,6 +27,8 @@ const [category, setCategory] = useState("")
 </Select>
 <Input type="number" legend="Valor" required placeholder="0,00"/>
 </div>
+
+<Upload />
         </form>
     )
 }

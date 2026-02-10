@@ -19,10 +19,7 @@ const [name, setName] = useState("")
 
 function fetchRefunds(e: React.FormEvent) {
 e.preventDefault()
-
-
 }
-
     return (
         <div className="bg-gray-500 rounded-xl p-10 md:min-w-3xl">
             <h1 className="text-gray-100 font-bold text-xl flex-1">Solicitações</h1>
@@ -34,7 +31,7 @@ e.preventDefault()
         <img src={searchSvg} alt="Íconde de pesquisa" className="w-5" />
     </Button>
 </form>
-<div>
+<div className="mt-6 flex flex-col gap-4 max-h-85.5 overflow-y-scroll">
 <RefundItem data={REFUND_EXAMPLE}/>
 </div>
         </div>

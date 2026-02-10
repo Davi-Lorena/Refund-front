@@ -16,8 +16,10 @@ const variants = {
 export function Button({ children, className, isLoading, type = "button", variant = "base", ...rest }: Props) {
     return (
         <button type={type} disabled={isLoading} {...rest} className={
-            ClassMerge(["flex items-center justify-center bg-green-100 rounded-lg text-white cursor-pointer hover:bg-green-200 transition ease-linear disabled:opacity-50 disabled:cursor-progress",
-                variants.button[variant], className
+            ClassMerge(["flex items-center justify-center bg-green-100 rounded-lg text-white cursor-pointer hover:bg-green-200 transition ease-linear disabled:opacity-50",
+                variants.button[variant], 
+                isLoading && "cursor-progress",
+                className
             ])
             }>
 {children}

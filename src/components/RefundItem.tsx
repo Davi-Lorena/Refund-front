@@ -19,7 +19,7 @@ return <a className="flex items-center gap-3 hover:bg-green-100/50 cursor-pointe
     </div>
 
     <span className="text-sm text-gray-100 font-semibold">
-        <small className="font-normal text-gray-200">R$ </small>
+        <small className="font-normal text-gray-200">R$</small>
         {data.amount}
     </span>
 </a>

@@ -6,10 +6,18 @@ import { EmployeeRoutes } from "./EmplyoeeRoutes";
 
 import { ManagerRoutes } from "./ManagerRoutes";
 
+import { Loading } from "../components/loading";
+
+const isLoading = false
+
 export function Routes() {
+if(isLoading) {
+    return <Loading />
+}
+
     return ( 
     <BrowserRouter>
-    <ManagerRoutes />
+    <AuthRoutes />
     </BrowserRouter>
     )
 }

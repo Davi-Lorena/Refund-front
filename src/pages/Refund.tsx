@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { Input } from "../components/Input";
 import { Select } from "../components/Select";
 import { Upload } from "../components/Upload";
@@ -14,9 +14,14 @@ const [isLoading, setIsLoading] = useState(false)
 const [filename, setFilename] = useState<File | null>(null)
 
 const navigate = useNavigate()
+const params = useParams<{id: string}>()
 
 function onSubmit(e: React.FormEvent) {
 e.preventDefault()
+
+if(params.id) {
+    return navigate(-1)
+}
 
 navigate("/confirm", { state: { fromSubmit: true } })
 }
@@ -28,9 +33,9 @@ navigate("/confirm", { state: { fromSubmit: true } })
     <p className="text-sm text-gray-200 mt-2 mb-4">Dados da despesa para solicitar reembolso.</p>
 </header>
 
-<Input required legend="Nome da solicitação" value={name} onChange={(e) => setName(e.target.value)}/>
+<Input required legend="Nome da solicitação" value={name} onChange={(e) => setName(e.target.value)} disabled={!!params.id}/>
 <div className="flex gap-4">
-<Select required legend="Categoria" value={category} onChange={(e) => setCategory(e.target.value)}> 
+<Select required legend="Categoria" value={category} onChange={(e) => setCategory(e.target.value)} disabled={!!params.id}> 
     {
         CATEGORIES_KEYS.map((category) => (
             <option key={category} value={category}>
@@ -39,12 +44,12 @@ navigate("/confirm", { state: { fromSubmit: true } })
         ))
     }
 </Select>
-<Input type="number" legend="Valor" required placeholder="0,00" value={amount} onChange={(e) => setAmount(e.target.value)}/>
+<Input type="number" legend="Valor" required placeholder="0,00" value={amount} onChange={(e) => setAmount(e.target.value)} disabled={!!params.id}/>
 </div>
 
-<Upload filename={filename && filename.name} onChange={(e) => e.target.files && setFilename(e.target.files[0])}/>
+<Upload filename={filename && filename.name} onChange={(e) => e.target.files && setFilename(e.target.files[0])} />
 
-<Button type="submit" isLoading={isLoading}>Enviar</Button>
+<Button type="submit" isLoading={isLoading}>{params.id ? "Voltar": "Enviar"}</Button>
         </form>
     )
 }

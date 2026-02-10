@@ -4,6 +4,7 @@ import { Input } from "../components/Input";
 import { Select } from "../components/Select";
 import { Upload } from "../components/Upload";
 import { Button } from "../components/Button";
+import fileSvg from "../assets/file.svg"
 import { CATEGORIES, CATEGORIES_KEYS } from "../utils/categories";
 
 export function Refund() {
@@ -47,7 +48,16 @@ navigate("/confirm", { state: { fromSubmit: true } })
 <Input type="number" legend="Valor" required placeholder="0,00" value={amount} onChange={(e) => setAmount(e.target.value)} disabled={!!params.id}/>
 </div>
 
-<Upload filename={filename && filename.name} onChange={(e) => e.target.files && setFilename(e.target.files[0])} />
+{
+    params.id 
+    ? 
+    <a href="" target="_blank" className="text-sm text-green-100 font-semibold flex items-center justify-center gap-2 my-6 hover:opacity-70 transition ease-linear">
+        <img src={fileSvg} alt="Ícone de arquivo" />
+        Abrir Comprovante</a> 
+    : 
+    <Upload filename={filename && filename.name} onChange={(e) => e.target.files && setFilename(e.target.files[0])} />
+}
+
 
 <Button type="submit" isLoading={isLoading}>{params.id ? "Voltar": "Enviar"}</Button>
         </form>

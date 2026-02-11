@@ -14,7 +14,7 @@ function onSubmit(e: React.FormEvent) {
 console.log(name, email, password, passwordConfirm)
 }
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-4">
+    <form onSubmit={onSubmit} className="flex flex-col gap-4 w-full">
 <Input required legend="Nome" placeholder="Seu nome" onChange={(e) => setName(e.target.value)}/>
 
 <Input required legend="E-mail" type="email" placeholder="seu@email" onChange={(e) => setEmail(e.target.value)}/>

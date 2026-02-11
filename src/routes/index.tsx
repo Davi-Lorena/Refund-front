@@ -6,7 +6,7 @@ import { EmployeeRoutes } from "./EmplyoeeRoutes";
 
 import { ManagerRoutes } from "./ManagerRoutes";
 
-import { Loading } from "../components/loading";
+import { Loading } from "../components/Loading";
 
 const isLoading = false
 

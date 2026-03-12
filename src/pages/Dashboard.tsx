@@ -47,13 +47,13 @@ function handlePagination(action: "next" | "previous") {
     <Input placeholder="Pesquisar pelo nome" onChange={(e) => setName(e.target.value)}/>
 
     <Button type="submit" variant="icon">
-        <img src={searchSvg} alt="Íconde de pesquisa" className="w-5" />
+        <img src={searchSvg} alt="Ícone de pesquisa" className="w-5" />
     </Button>
 </form>
 <div className="my-6 flex flex-col gap-4 max-h-85.5 overflow-y-scroll">
     {
         refunds.map((item) => ( 
-<RefundItem key={item.id} data={item} href={`/refund/${item.id}`}/>
+            <RefundItem key={item.id} data={item} href={`/refund/${item.id}`}/>
         ))
     }
 </div>

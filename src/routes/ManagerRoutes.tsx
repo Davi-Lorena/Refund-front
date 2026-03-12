@@ -8,8 +8,8 @@ export function ManagerRoutes() {
     return (
         <Routes>
             <Route path="/" element={<AppLayout />}>
-<Route path="/" index element={<Dashboard />} />
-<Route path="/refund/:id" element={<Refund />} />
+                <Route path="/" index element={<Dashboard />} />
+                <Route path="/refund/:id" element={<Refund />} />
             </Route>
 
             <Route path="*" element={<NotFound />} />

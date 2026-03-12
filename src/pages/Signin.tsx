@@ -22,7 +22,7 @@ try {
   })
 
   const response = await api.post("/sessions", data)
-  
+
 } catch (error) {
   console.log(error)
   if(error instanceof ZodError){

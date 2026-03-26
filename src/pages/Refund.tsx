@@ -116,8 +116,18 @@ return (
         ))
     }
 </Select>
-<Input type="number" legend="Valor" required placeholder="0,00" value={amount} onChange={(e) => setAmount(e.target.value)} disabled={!!params.id}/>
+
+{
+    params.id ?
+    <Input type="text" legend="Valor" required placeholder="0,00" value={amount} onChange={(e) => setAmount(e.target.value)} disabled={!!params.id}/>
+    :
+    <Input type="number" legend="Valor" required placeholder="0,00" value={amount} onChange={(e) => setAmount(e.target.value)} disabled={!!params.id}/>
+}
+
 </div>
+
+
+
 
 {
     (params.id && fileURL)

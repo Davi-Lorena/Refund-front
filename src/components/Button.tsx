@@ -20,9 +20,8 @@ export function Button({ children, className, isLoading, type = "button", varian
                 variants.button[variant], 
                 isLoading && "cursor-progress",
                 className
-            ])
-            }>
-{children}
+            ])}>
+            {children}
         </button>
     )
 }

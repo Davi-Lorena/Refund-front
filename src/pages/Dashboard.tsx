@@ -42,6 +42,11 @@ async function fetchRefunds() {
 
 }
 
+function onSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    fetchRefunds()
+}
+
 function handlePagination(action: "next" | "previous") {
     setPage((prevPage) => {
         if(action === "next" && prevPage < totalOfPage) {
@@ -64,7 +69,7 @@ fetchRefunds()
         <div className="bg-gray-500 rounded-xl p-10 md:min-w-3xl">
             <h1 className="text-gray-100 font-bold text-xl flex-1">Solicitações</h1>
 
-<form onSubmit={fetchRefunds} className="flex flex-1 items-center justify-between pb-6 border-b border-b-gray-400 md:flex-row gap-2 mt-6">
+<form onSubmit={onSubmit} className="flex flex-1 items-center justify-between pb-6 border-b border-b-gray-400 md:flex-row gap-2 mt-6">
     <Input placeholder="Pesquisar pelo nome" onChange={(e) => setName(e.target.value)}/>
 
     <Button type="submit" variant="icon">

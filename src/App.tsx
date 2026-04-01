@@ -1,3 +1,10 @@
+import { AuthProvider } from "./contexts/AuthContext";
+import { Routes } from "./routes";
+
 export default function App() {
-  return <h1>Hello, world!</h1>;
+  return (
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
+)
 }
